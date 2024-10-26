@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DualProyectileMovement : ProyectileMovement
+public class DualProyectileMovement : ProjectileMovement
 {
     protected override void Movement()
     {

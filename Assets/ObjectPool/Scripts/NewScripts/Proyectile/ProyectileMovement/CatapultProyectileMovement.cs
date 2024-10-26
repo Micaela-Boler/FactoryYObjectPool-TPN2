@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class CatapultProyectileMovement : ProyectileMovement
+public class CatapultProyectileMovement : ProjectileMovement
 {
     private bool catapult;
     private bool lockOn;

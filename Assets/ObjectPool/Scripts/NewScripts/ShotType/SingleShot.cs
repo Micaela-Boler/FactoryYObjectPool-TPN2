@@ -6,12 +6,13 @@ public class SingleShot : ShotType
 {
     public override void Shoot()
     {
-        //base.Shoot();
-        GameObject obstacle = ObjectPool.instance.GetObstacle();
-        obstacle.transform.position = muzzleMain.transform.position;
-        obstacle.transform.rotation = muzzleMain.transform.rotation;
-        obstacle.SetActive(true);
+        ActivateParticles(muzzleMain);
+        GameObject singleProyectile = ObjectPool.instance.GetProyectile();
+        singleProyectile.transform.position = muzzleMain.transform.position;
+        singleProyectile.transform.rotation = muzzleMain.transform.rotation;
+        singleProyectile.SetActive(true);
 
-        projectile.target = prepareShot.currentTarget.transform;
+        GetProjectileMovement(singleProyectile);
+        projectileMovement.target = prepareShot.currentTarget.transform;
     }
 }

@@ -93,7 +93,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4861662399065844}
   - component: {fileID: 136868475237709256}
-  - component: {fileID: 114673051568919746}
   - component: {fileID: 54733545500693444}
   - component: {fileID: -5627862469811880909}
   - component: {fileID: -406149504771735552}
@@ -144,27 +143,6 @@ CapsuleCollider:
   m_Height: 0.5
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114673051568919746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1773485284122676}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66749fef3309f654791e063c70ce1ca3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 2
-  target: {fileID: 0}
-  lockOn: 0
-  speed: 10
-  turnSpeed: 4
-  catapult: 0
-  knockBack: 1.5
-  boomTimer: 10
-  explosion: {fileID: 198049787571439516, guid: 6d074a749488789479e539251fdf184e, type: 3}
 --- !u!54 &54733545500693444
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -6,7 +6,6 @@ using static UnityEngine.GraphicsBuffer;
 public class DestroyProyectile : MonoBehaviour
 {
     [Header("TARGET")]
-    public Transform target;
     public float knockBack = 0.1f;
 
     [Header("EXPLOSION")]
@@ -15,12 +14,7 @@ public class DestroyProyectile : MonoBehaviour
 
 
 
-    private void Start()
-    {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-
-    private void Update()
+    protected void Update()
     {
         ExplosionTimer();
     }
@@ -38,18 +32,24 @@ public class DestroyProyectile : MonoBehaviour
 
     private bool CanDestroyProyectile()
     {
-        return target == null || transform.position.y < -0.2f || boomTimer < 0;
+        return transform.position.y < -0.2f || boomTimer < 0;
     }
 
-    public void Explosion()
+    protected virtual void Explosion()
     {
-        Instantiate(explosion, transform.position, transform.rotation);
+        Debug.Log("DESTRUIR");
+        InstantiateExplosion();
         Destroy(gameObject);
     }
 
+    protected void InstantiateExplosion()
+    {
+        Instantiate(explosion, transform.position, transform.rotation);
+    }
 
 
-    private void OnTriggerEnter(Collider other)
+
+    protected void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Player")
         {
@@ -57,6 +57,7 @@ public class DestroyProyectile : MonoBehaviour
             Vector3 knockBackPos = other.transform.position + (dir.normalized * knockBack);
             knockBackPos.y = 1;
             other.transform.position = knockBackPos;
+
             Explosion();
         }
     }

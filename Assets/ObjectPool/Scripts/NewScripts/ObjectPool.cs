@@ -31,14 +31,14 @@ public class ObjectPool : MonoBehaviour
 
     void Start()
     {
-        AddProyectileToPool();
+        AddProyectileToPool(amountToPool);
     }
 
 
 
-    private void AddProyectileToPool()
+    private void AddProyectileToPool(int quantityToAdd)
     {
-        for (int i = 0; i < amountToPool; i++)
+        for (int i = 0; i < quantityToAdd; i++)
         {
             GameObject obstacle = Instantiate(proyectile);
             obstacle.SetActive(false);
@@ -48,15 +48,20 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    public GameObject GetObstacle()
+    public GameObject GetProyectile()
     {
         for (int i = 0; i < amountToPool; i++)
         {
             if (!pooledObstacles[i].activeSelf)
             {
-                return pooledObstacles[i];
+                if (pooledObstacles[i] != null)
+                {
+                    return pooledObstacles[i];
+                }
             }
         }
-        return null;
+        AddProyectileToPool(1);
+        pooledObstacles[pooledObstacles.Count - 1].SetActive(true);
+        return pooledObstacles[pooledObstacles.Count - 1];
     }
 }

@@ -10,8 +10,7 @@ public class CatapultShot : ShotType
     {
         lockOnPos = prepareShot.currentTarget.transform;
 
-        //Aplicar POOL OBJECT
         base.Shoot() ;
-        projectile.target = lockOnPos;
+        projectileMovement.target = lockOnPos;
     }
 }

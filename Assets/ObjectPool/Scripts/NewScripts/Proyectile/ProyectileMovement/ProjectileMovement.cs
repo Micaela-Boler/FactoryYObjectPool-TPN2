@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ProyectileMovement : MonoBehaviour
+public abstract class ProjectileMovement : MonoBehaviour
 {
     public float speed = 1;
     public float turnSpeed = 1;

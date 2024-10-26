@@ -12,17 +12,17 @@ public class DualShot : ShotType
     {
         if (shootLeft)
         {
-            //Aplicar POOL OBJECT
             base.Shoot();
-            projectile.target = transform.GetComponent<PrepareShot>().currentTarget.transform;
+            projectileMovement.target = transform.GetComponent<PrepareShot>().currentTarget.transform;
         }
         else
         {
-            //Aplicar POOL OBJECT
-            Instantiate(muzzleEff, muzzleSub.transform.position, muzzleSub.rotation);
+            ActivateParticles(muzzleSub);
+
             GameObject missleGo = Instantiate(bullet, muzzleSub.transform.position, muzzleSub.rotation);
+
             Projectile projectile = missleGo.GetComponent<Projectile>(); //REPETIDO
-            projectile.target = transform.GetComponent<PrepareShot>().currentTarget.transform;
+            projectile.target = transform.GetComponent<PrepareShot>().currentTarget.transform; //REPETIDO
         }
 
         shootLeft = !shootLeft;
