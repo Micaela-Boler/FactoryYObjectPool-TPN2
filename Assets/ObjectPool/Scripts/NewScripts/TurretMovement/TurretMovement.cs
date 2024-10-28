@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static TurretAI;
 
 public class TurretMovement : MonoBehaviour
 {
@@ -12,7 +11,7 @@ public class TurretMovement : MonoBehaviour
     protected Vector3 targetDir;
 
     [Header("OTHER SCRIPTS")]
-    public PrepareShot prepareShot;
+    public FindTarget findTarget;
 
 
 
@@ -30,15 +29,15 @@ public class TurretMovement : MonoBehaviour
 
      void FollowOrRotate()
      {
-        if (prepareShot.currentTarget != null)
+        if (findTarget.currentTarget != null)
         {
             FollowTarget();
 
-            float currentTargetDist = Vector3.Distance(transform.position, prepareShot.currentTarget.transform.position);
+            float currentTargetDist = Vector3.Distance(transform.position, findTarget.currentTarget.transform.position);
 
-            if (currentTargetDist > prepareShot.attackDist) 
+            if (currentTargetDist > findTarget.attackDist) 
             {
-                prepareShot.currentTarget = null;
+                findTarget.currentTarget = null;
             }
         }
         else
@@ -56,7 +55,7 @@ public class TurretMovement : MonoBehaviour
 
     protected void TargetDirection()
     {
-        targetDir = prepareShot.currentTarget.transform.position - turreyHead.position;
+        targetDir = findTarget.currentTarget.transform.position - turreyHead.position;
         targetDir.y = 0;
     }
 

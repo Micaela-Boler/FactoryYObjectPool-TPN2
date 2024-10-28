@@ -1,24 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static TurretAI;
 
-public class PrepareShot : MonoBehaviour
+public class FindTarget : MonoBehaviour
 {
-    [HideInInspector] public GameObject currentTarget;
+    [SerializeField] public GameObject currentTarget;
     public float attackDist = 10.0f;
-    public float shootCoolDown;
-    private float timer;
 
     [Header("ANIMATOR")]
     public Animator animator;
 
-    [Header("OTHER SCRIPTS")]
-    public ShotType shotType;
 
-
-
-    protected void Start()
+    private void Start()
     {
         InvokeRepeating("CheckForTarget", 0, 0.5f);
 
@@ -28,35 +21,6 @@ public class PrepareShot : MonoBehaviour
             animator = transform.GetChild(0).GetComponent<Animator>();
         }
     }
-
-    private void Update()
-    {
-        ShotCooldown();
-    }
-
-    private void ShotCooldown()
-    {
-        timer += Time.deltaTime;
-
-        if (timer >= shootCoolDown)
-        {
-            if (currentTarget != null)
-            {
-                timer = 0;
-
-                if (animator != null)
-                {
-                    animator.SetTrigger("Fire");
-                    shotType.Shoot();
-                }
-                else
-                {
-                    shotType.Shoot();
-                }
-            }
-        }
-    }
-
 
     private void CheckForTarget()
     {

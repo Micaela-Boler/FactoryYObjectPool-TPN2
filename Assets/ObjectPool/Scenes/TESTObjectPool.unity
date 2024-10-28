@@ -731,8 +731,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObstacles: []
-  amountToPool: 10
-  proyectile: {fileID: 1230967522142342, guid: eb167afc8ab53774898a71ad9c87e1e8, type: 3}
+  amountToPool: 20
+  proyectile: {fileID: 1230967522142342, guid: 67c65ee979526a94c93f9dc67632b0a8, type: 3}
 --- !u!4 &1649413166
 Transform:
   m_ObjectHideFlags: 0
@@ -1502,10 +1502,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4268994209302481}
-  - component: {fileID: 114356927949129575}
+  - component: {fileID: 114356927949129580}
   - component: {fileID: 114356927949129578}
   - component: {fileID: 114356927949129577}
-  - component: {fileID: 114356927949129576}
+  - component: {fileID: 114356927949129579}
   m_Layer: 0
   m_Name: FattyMissileG
   m_TagString: Untagged
@@ -1622,6 +1622,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4947991731845305}
+  - component: {fileID: 114097961478371186}
   - component: {fileID: 114097961478371184}
   - component: {fileID: 114097961478371183}
   - component: {fileID: 114097961478371185}
@@ -1709,9 +1710,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4881488377596671}
+  - component: {fileID: 114488249203134302}
   - component: {fileID: 114488249203134300}
-  - component: {fileID: 114488249203134299}
   - component: {fileID: 114488249203134298}
+  - component: {fileID: 114488249203134301}
   m_Layer: 0
   m_Name: FattyMissileGSingle
   m_TagString: Untagged
@@ -3525,7 +3527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   muzzleEff: {fileID: 1497772684437746, guid: bd75ef4ae186f454a90b2de71bed2854, type: 3}
   bullet: {fileID: 1986743744459060, guid: 9487ab9774304a24585b7f05a0cfcf09, type: 3}
-  prepareShot: {fileID: 114097961478371185}
+  findTarget: {fileID: 114097961478371186}
   muzzleMain: {fileID: 4219618503949227}
 --- !u!114 &114097961478371184
 MonoBehaviour:
@@ -3541,7 +3543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turreyHead: {fileID: 4753845370466169}
   loockSpeed: 100
-  prepareShot: {fileID: 114097961478371185}
+  findTarget: {fileID: 114097961478371186}
 --- !u!114 &114097961478371185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3551,55 +3553,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1460030201248409}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 880f526f12e50d145a494cedc1dba133, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fbe9b99e7d1d3c4f9a23af2f61b1691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTarget: {fileID: 0}
-  attackDist: 10
-  shootCoolDown: 1
-  animator: {fileID: 0}
   shotType: {fileID: 114097961478371183}
---- !u!114 &114356927949129575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1321377120771053}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c02d99ed6d2ff5f4da31f151e897a3e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTarget: {fileID: 0}
-  turreyHead: {fileID: 4894621980870573}
-  attackDist: 7.5
-  shootCoolDown: 0.5
-  loockSpeed: 100
-  randomRot: {x: 0, y: 0, z: 0}
+  findTarget: {fileID: 114097961478371186}
+  shootCoolDown: 10
   animator: {fileID: 0}
-  turretType: 2
-  muzzleMain: {fileID: 4372666847605025}
-  muzzleSub: {fileID: 4535924313212195}
-  muzzleEff: {fileID: 1497772684437746, guid: bd75ef4ae186f454a90b2de71bed2854, type: 3}
-  bullet: {fileID: 1773485284122676, guid: 9e0d59e1858a95d4aafcfc9ef7e94671, type: 3}
---- !u!114 &114356927949129576
+--- !u!114 &114097961478371186
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1321377120771053}
+  m_GameObject: {fileID: 1460030201248409}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 880f526f12e50d145a494cedc1dba133, type: 3}
+  m_Script: {fileID: 11500000, guid: 6928699ff75ff0943afaaa6714da1c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentTarget: {fileID: 0}
-  attackDist: 10
-  shootCoolDown: 0.5
+  attackDist: 9.55
   animator: {fileID: 0}
-  shotType: {fileID: 114356927949129577}
 --- !u!114 &114356927949129577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3614,7 +3589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   muzzleEff: {fileID: 1497772684437746, guid: bd75ef4ae186f454a90b2de71bed2854, type: 3}
   bullet: {fileID: 1773485284122676, guid: 0e47b85893cb28e46a4dcc4c6ec12feb, type: 3}
-  prepareShot: {fileID: 114356927949129576}
+  findTarget: {fileID: 114356927949129580}
   muzzleMain: {fileID: 4372666847605025}
   muzzleSub: {fileID: 4535924313212195}
 --- !u!114 &114356927949129578
@@ -3631,7 +3606,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turreyHead: {fileID: 4894621980870573}
   loockSpeed: 100
-  prepareShot: {fileID: 114356927949129576}
+  findTarget: {fileID: 114356927949129580}
+--- !u!114 &114356927949129579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321377120771053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fbe9b99e7d1d3c4f9a23af2f61b1691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotType: {fileID: 114356927949129577}
+  findTarget: {fileID: 114356927949129580}
+  shootCoolDown: 0.5
+  animator: {fileID: 0}
+--- !u!114 &114356927949129580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321377120771053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6928699ff75ff0943afaaa6714da1c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTarget: {fileID: 0}
+  attackDist: 7.12
+  animator: {fileID: 0}
 --- !u!114 &114488249203134298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3645,26 +3651,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muzzleEff: {fileID: 1497772684437746, guid: bd75ef4ae186f454a90b2de71bed2854, type: 3}
-  bullet: {fileID: 1230967522142342, guid: 67c65ee979526a94c93f9dc67632b0a8, type: 3}
-  prepareShot: {fileID: 114488249203134299}
+  bullet: {fileID: 1773485284122676, guid: 0e47b85893cb28e46a4dcc4c6ec12feb, type: 3}
+  findTarget: {fileID: 114488249203134302}
   muzzleMain: {fileID: 4064776650530591}
---- !u!114 &114488249203134299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1545945416563297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 880f526f12e50d145a494cedc1dba133, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTarget: {fileID: 0}
-  attackDist: 7.5
-  shootCoolDown: 0.5
-  animator: {fileID: 0}
-  shotType: {fileID: 114488249203134298}
 --- !u!114 &114488249203134300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3679,7 +3668,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turreyHead: {fileID: 4224525060827749}
   loockSpeed: 200
-  prepareShot: {fileID: 114488249203134299}
+  findTarget: {fileID: 114488249203134302}
+--- !u!114 &114488249203134301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545945416563297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87523180e3fba554eb21b568a16af292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotType: {fileID: 114488249203134298}
+  findTarget: {fileID: 114488249203134302}
+--- !u!114 &114488249203134302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545945416563297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6928699ff75ff0943afaaa6714da1c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTarget: {fileID: 0}
+  attackDist: 7.24
+  animator: {fileID: 0}
 --- !u!198 &198250412740444859
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -27538,7 +27556,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27611,7 +27628,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

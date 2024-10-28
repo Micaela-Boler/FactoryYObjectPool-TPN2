@@ -13,16 +13,13 @@ public class DualShot : ShotType
         if (shootLeft)
         {
             base.Shoot();
-            projectileMovement.target = transform.GetComponent<PrepareShot>().currentTarget.transform;
         }
         else
         {
             ActivateParticles(muzzleSub);
 
             GameObject missleGo = Instantiate(bullet, muzzleSub.transform.position, muzzleSub.rotation);
-
-            Projectile projectile = missleGo.GetComponent<Projectile>(); //REPETIDO
-            projectile.target = transform.GetComponent<PrepareShot>().currentTarget.transform; //REPETIDO
+            GetProjectileMovement(missleGo);
         }
 
         shootLeft = !shootLeft;

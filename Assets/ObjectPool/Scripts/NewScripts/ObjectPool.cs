@@ -56,6 +56,7 @@ public class ObjectPool : MonoBehaviour
             {
                 if (pooledObstacles[i] != null)
                 {
+                    pooledObstacles[i].SetActive(true);
                     return pooledObstacles[i];
                 }
             }

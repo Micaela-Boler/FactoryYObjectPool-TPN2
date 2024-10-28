@@ -8,7 +8,7 @@ public abstract class ShotType : MonoBehaviour
     public GameObject bullet;
 
     [Header("OTHER SCRIPTS")]
-    public PrepareShot prepareShot;
+    public FindTarget findTarget;
     protected ProjectileMovement projectileMovement;
 
     [Header("MUZZLE TRANSFORM")]
@@ -26,6 +26,7 @@ public abstract class ShotType : MonoBehaviour
     protected virtual void GetProjectileMovement(GameObject bullet)
     {
         projectileMovement = bullet.GetComponent<ProjectileMovement>();
+        projectileMovement.target = findTarget.currentTarget.transform;
     }
 
     protected virtual void ActivateParticles(Transform muzzleTransform)

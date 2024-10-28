@@ -6,13 +6,8 @@ public abstract class ProjectileMovement : MonoBehaviour
 {
     public float speed = 1;
     public float turnSpeed = 1;
-    public Transform target;
+    public Transform target; 
 
-
-    protected void Awake()
-    {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
-    }
 
     protected void Update()
     {
